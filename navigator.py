@@ -403,9 +403,7 @@ class Navigation(gtk.DrawingArea):
         # zoom and scale
         k = cmath.rect(self.zoomlevel * SCALE, self.rotate)
         cords = (self.placemarks['line']['cord'] - self.ref) * k
-        # draw locations (points)
         self.cr.set_line_width(1)
-        #self.cr.set_source_rgb(0, 1, 1)
         for i in xrange(len(self.placemarks['line']['cord'])):
             lcolor = self.placemarks['line']['color'][i]
             cord = cords[i]
@@ -413,7 +411,7 @@ class Navigation(gtk.DrawingArea):
             self.cr.move_to(cord[0].real, WIN_Y - cord[0].imag)
             self.cr.line_to(cord[1].real, WIN_Y - cord[1].imag)
 
-        self.cr.stroke()
+            self.cr.stroke()
 
     def draw_quadrangle(self):
         '''draw lines'''
@@ -606,7 +604,7 @@ class Main(object):
         self.window.set_size_request(WIN_X, WIN_Y)
         if not self.window.get_display():
             raise Exception("Can't open display")
-        self.window.set_title('Baiji Navigation')
+        self.window.set_title('Navigator')
         self.widget = Navigation()
         self.window.connect('delete_event', self.delete_event)
         self.window.connect('destroy', self.destroy)
