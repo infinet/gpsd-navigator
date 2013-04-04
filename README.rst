@@ -6,12 +6,12 @@ There are three scripts in this package.
 navigator.py is for viewing current location, heading, and speed on the world
 vector shoreline map.
 
-navigation2img.py is similar. The difference is it export several images in
+navigation2img.py is similar. The difference is it exports several images in
 different zoom levels and resolutions. Ideal for display on webpage.
 
 readvct00.py is for converting the downloaded world vector shoreline in binary
-format to a sqlite database file. navigator.py and navigation2img.py query this
-database file to retrieve the shoreline data.
+format to a sqlite database which use by navigator.py and navigation2img.py.
+
 
 License
 =======
@@ -23,17 +23,12 @@ copy of which is include in the file COPYRIGHT.
 Requirement:
 ============
 
-It gets GPS information from gpsd, a daemon connect to a GPS device, by USB,
-Bluetooth, or RS232. Any linux distribution comes with a recent version of
-python and gpsd should able to run it. There are gpsd for MacOS X and Windows
-too, try it yourself.
+gpsd: The gps data is read from gpsd. Tested on gpsd 3.6, but other version
+should also work.
 
 Python: tested on python 2.7
 
 Pygtk: it draws the GUI
-
-gpsd: download and install it from http://www.catb.org/gpsd/ if not found in
-your system.
 
 Numpy: a coordinate is represented as a complex number which real portion is
 the longitude, image portion is the latitude. Numpy makes transforming large
@@ -43,8 +38,9 @@ install it from www.scipy.org
 
 python-sqlite: used for store shoreline
 
+
 How to run
-----------
+==========
 
 1. Download the world vector shoreline from NOAA.
    http://www.ngdc.noaa.gov/mgg/dat/geodas/coastlines/LittleEndian/wvs1mres.b00

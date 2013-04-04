@@ -47,7 +47,7 @@ the data part:
 
 '''
 
-__license__   = 'BSD'
+__license__ = 'BSD'
 __copyright__ = '2013, Chen Wei <weichen302@gmx.com>'
 
 from struct import unpack
@@ -107,17 +107,16 @@ def pencode2res(pencode):
 
 def unpack_vct00(tenbytes):
     '''unpack a 10-bytes vct00 record section
-    all sections are seperated into:
-    4-bytes, 4-bytes, 2-bytes, all signed integers
-    Args:
+    4 bytes  signed integer    latitude
+    4 bytes  signed integer    longitude
+    2 bytes  signed integer    pencode
+    Arg:
         tenbytes: the 10 bytes section
     Return:
         a list of 3 integer, eg. [1, 22, 333]
         '''
-    lat = unpack('<i', tenbytes[:4])[0]    # lat  long integer
-    lon = unpack('<i', tenbytes[4:8])[0]   # lon
-    pen = unpack('<h', tenbytes[8:])[0]  # pencode
-    return (lat, lon, pen)
+    # (lat, lon, pen)
+    return unpack('<iih', tenbytes)
 
 
 def parse_vct00_header(fname):
