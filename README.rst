@@ -3,14 +3,22 @@ gpsd Navigator
 
 There are three scripts in this package.
 
-navigator.py is for viewing current location, heading, and speed on the world
-vector shoreline map.
+navigator.py is a gpsd client that plot current gps data (location, heading,
+speed, etc.) on a world vector shoreline map. It can pan, zoom, rotate, measure
+distance and heading like Goolge Earth does.  Pre-defined shapes such as lines
+and placemarks can also be drawed on the map.
 
-navigation2img.py is similar. The difference is it exports several images in
-different zoom levels and resolutions. Ideal for display on webpage.
+navigation2img.py is similar, but it exports several images in different zoom
+levels and resolutions instead of draw on screen interactively. Ideal for
+publish on web.
 
-readvct00.py is for converting the downloaded world vector shoreline in binary
-format to a sqlite database which use by navigator.py and navigation2img.py.
+readvct00.py is for converting the binary NOAA world vector shoreline data to a
+sqlite database which use by navigator.py and navigation2img.py.
+
+**Screenshots:**
+  - https://dl.dropbox.com/u/509097/screenshot/screenshot_3.png
+  - https://dl.dropbox.com/u/509097/screenshot/screenshot_4.png
+
 
 
 License
