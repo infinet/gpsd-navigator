@@ -1,4 +1,4 @@
-# gpsd Navigator
+### gpsd Navigator
 
 There are three scripts in this package.
 
@@ -14,20 +14,20 @@ publish on web.
 `readvct00.py` is for converting the binary NOAA world vector shoreline data to
 a sqlite database which use by navigator.py and navigation2img.py.
 
-## Screenshot
+#### Screenshot
 
 ![Screenshot 1][]
 
 ![Screenshot 2][]
 
 
-# License
+### License
 
 This package is released under the terms and conditions of the BSD License, a
 copy of which is include in the file COPYRIGHT.
 
 
-# Requirement:
+### Requirement:
 
  * gpsd: The gps data is read from gpsd. Tested on gpsd 3.6, but other version
 should also work.
@@ -45,13 +45,13 @@ download and install it from [scipy][].
  * python-sqlite: used for store shoreline
 
 
-# How to run
+### How to run
 
 1. Download the [world vector shoreline][] from NOAA.
 
 2. To generate the shoreline sqlite database, run:
 
-    $ readvct00.py -i inputfile -o output-sqlite
+    $ readvct00.py --input wvs1mres.b00 --output shoreline.sqlite
 
 3. After gpsd started, run `navigator.py` or `navigation2img.py`.
 
@@ -64,5 +64,4 @@ download and install it from [scipy][].
 [Screenshot 2]: https://raw.github.com/infinet/gpsd-navigator/gh-pages/images/screenshot_4.png
 [gpsd]: http://www.catb.org/gpsd/
 [scipy]: http://www.scipy.org
-
-
+[Numpy]: http://www.numpy.org
